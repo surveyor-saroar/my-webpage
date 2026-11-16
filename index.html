@@ -10,21 +10,69 @@
 </head>
 <body>
 
-    <div class="card">
-        <!-- আপনার ছবি -->
-        <img src="my-pic.png" alt="আমার ছবি" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #f4f7f6;">
+    <!-- ওপরের সবুজ মেনু বার (Navigation Bar) -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <!-- হোম আইকন -->
+            <li><a href="#" class="home-icon"><i class="fa-solid fa-house"></i></a></li>
+            
+            <!-- মেনু বাটন ১: ভূমি-তথ্য ও সেবা -->
+            <li class="dropdown">
+                <a href="#">ভূমি-তথ্য ও সেবা <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">খতিয়ান সেবা</a></li>
+                    <li><a href="#">নামজারি আবেদন</a></li>
+                </ul>
+            </li>
 
-        <!-- স্বাগতম লেখা -->
-        <h1>স্বাগতম</h1>
-        
-        <!-- কালারযুক্ত পেশার বিবরণ -->
-        <p style="color: #0984e3; font-weight: bold; font-size: 16px;">ডিজিটাল মিডিয়া ক্রিয়েটর ও ল্যান্ড সার্ভেয়ার</p>
+            <!-- মেনু বাটন ২: যোগাযোগ -->
+            <li class="dropdown">
+                <a href="#">যোগাযোগ <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">অফিস ঠিকানা</a></li>
+                    <li><a href="#">মোবাইল নম্বর</a></li>
+                </ul>
+            </li>
 
-        <!-- ফেসবুক পেজ বাটন -->
-        <a href="https://facebook.com" target="_blank" style="display: inline-flex; align-items: center; background-color: #2c3e50; color: #ffffff; padding: 10px 24px; border-radius: 8px; text-decoration: none; margin-top: 15px; font-weight: bold; font-size: 16px;">
-            <i class="fa-brands fa-facebook" style="background-color: #ffffff; color: #1877f2; font-size: 20px; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;"></i> 
-            ফেসবুক পেজ
-        </a>
+            <!-- মেনু বাটন ৩: জরিপ সংক্রান্ত তথ্য -->
+            <li class="dropdown">
+                <a href="#">জরিপ সংক্রান্ত তথ্য <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">সিএস জরিপ</a></li>
+                    <li><a href="#">এসএ ও আরএস জরিপ</a></li>
+                    <li><a href="#">বিএস জরিপ</a></li>
+                </ul>
+            </li>
+
+            <!-- মেনু বাটন ৪: নকশা -->
+            <li class="dropdown">
+                <a href="#">নকশা <i class="fa-solid fa-chevron-down arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">মৌজা ম্যাপ</a></li>
+                    <li><a href="#">ট্রেচ ম্যাপ</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- মূল কন্টেন্ট ও আপনার প্রোফাইল কার্ড -->
+    <div class="main-container">
+        <div class="card">
+            <!-- আপনার ছবি -->
+            <img src="my-pic.png" alt="আমার ছবি" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #f4f7f6;">
+
+            <!-- স্বাগতম লেখা -->
+            <h1>স্বাগতম</h1>
+            
+            <!-- পেশার বিবরণ -->
+            <p style="color: #0984e3; font-weight: bold; font-size: 16px;">ডিজিটাল মিডিয়া ক্রিয়েটর ও ল্যান্ড সার্ভেয়ার</p>
+
+            <!-- ফেসবুক পেজ বাটন -->
+            <a href="https://facebook.com" target="_blank" style="display: inline-flex; align-items: center; background-color: #2c3e50; color: #ffffff; padding: 10px 24px; border-radius: 8px; text-decoration: none; margin-top: 15px; font-weight: bold; font-size: 16px;">
+                <i class="fa-brands fa-facebook" style="background-color: #ffffff; color: #1877f2; font-size: 20px; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;"></i> 
+                ফেসবুক পেজ
+            </a>
+        </div>
     </div>
 
 </body>
