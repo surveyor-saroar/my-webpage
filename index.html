@@ -136,7 +136,7 @@
             justify-content: center;
             align-items: center;
             gap: 40px;
-            padding: 40px 20px;
+            padding: 25px 20px;
             flex-wrap: wrap;
             z-index: 2;
         }
@@ -238,7 +238,7 @@
         .middle-column {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 14px;
             align-items: center;
         }
 
@@ -246,7 +246,7 @@
         .card {
             position: relative;
             background-color: #ffffff;
-            padding: 30px 25px;
+            padding: 25px 25px;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
@@ -290,33 +290,33 @@
         }
 
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border: 3px solid #f4f7f6;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .card h1 {
             color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 26px;
+            margin-bottom: 4px;
+            font-size: 25px;
         }
 
         .profession {
             color: #0984e3;
             font-weight: bold;
-            font-size: 15px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 12px;
         }
 
         .contact-box {
             background-color: #f8f9fa;
-            padding: 12px;
+            padding: 10px 12px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: left;
             font-size: 13px;
             color: #2d3436;
@@ -328,7 +328,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 10px 20px;
+            padding: 9px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -357,13 +357,13 @@
             margin-right: 8px;
         }
 
-        /* প্রোফাইল কার্ডের নিচের অফিস লোকেশন ম্যাপ বক্স */
+        /* প্রোফাইল কার্ডের নিচের কম্প্যাক্ট অফিস লোকেশন ম্যাপ বক্স (হাইট ১.৫ ইঞ্চি স্কেলে) */
         .map-container-box {
             width: 350px;
             background-color: #ffffff;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
             border: 2px solid #009432;
         }
 
@@ -371,8 +371,8 @@
             background-color: #009432;
             color: #ffffff;
             text-align: center;
-            padding: 8px;
-            font-size: 14px;
+            padding: 5px 8px;
+            font-size: 13px;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -382,13 +382,14 @@
 
         .map-iframe-wrapper {
             width: 100%;
-            height: 180px;
+            height: 1.5in; /* ঠিক ১.৫ ইঞ্চি হাইট */
         }
 
         .map-iframe-wrapper iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
         }
 
         @media (max-width: 1100px) {
@@ -420,7 +421,7 @@
             <li class="dropdown">
                 <a href="#">যোগাযোগ <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="https://maps.app.goo.gl/3m1!4b1!4m6!3m5!1s0x375461ba729392a3:0xf0ed69f2b1592cbf" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #009432;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
+                    <li><a href="https://maps.google.com/?q=Kaduti+Bazar,Chandina,Comilla" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #009432;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
                     <li><a href="tel:01817068114"><i class="fa-solid fa-phone" style="margin-right: 8px; color: #009432;"></i> 01817068114</a></li>
                 </ul>
             </li>
@@ -469,7 +470,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড + নিচে লাইভ গুগল ম্যাপ) -->
+        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড + নিচে ১.৫ ইঞ্চি হাইটের লাইভ গুগল ম্যাপ) -->
         <div class="middle-column">
             
             <!-- প্রোফাইল কার্ড -->
@@ -489,10 +490,10 @@
                 </a>
             </div>
 
-            <!-- আপনার দেওয়া নমুনা অনুযায়ী নিচের অফিস লোকেশন ম্যাপ বক্স -->
+            <!-- ১.৫ ইঞ্চি হাইটের অফিস লোকেশন ম্যাপ বক্স -->
             <div class="map-container-box">
                 <div class="map-header">
-                    <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ (কাদুটি বাজার, চান্দিনা)
+                    <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ
                 </div>
                 <div class="map-iframe-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5447781351187!2d90.9619575!3d23.4025711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375461ba729392a3%3A0xf0ed69f2b1592cbf!2sKaduti%20Bazar!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
