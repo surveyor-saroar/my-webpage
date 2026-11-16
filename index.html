@@ -129,14 +129,14 @@
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার (স্লাইডার ও কার্ড একই লাইনে রাখার জন্য align-items: flex-start) */
+        /* মূল কন্টেন্ট কন্টেইনার - ওপর থেকে ১ ইঞ্চি (প্রায় 1in / 96px) ফাঁকা জায়গা রাখা হয়েছে */
         .main-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             gap: 35px;
-            padding: 35px 20px;
+            padding: 1in 20px 40px 20px; 
             flex-wrap: wrap;
             z-index: 2;
         }
@@ -235,7 +235,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের কলাম (প্রোফাইল কার্ড ও ম্যাপ উভয়ই স্লাইডারের সমান 300px স্কেলে) */
+        /* মাঝখানের কলাম */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -244,7 +244,7 @@
             width: 300px;
         }
 
-        /* মাঝখানের প্রোফাইল কার্ড (স্লাইডারের সমান 300px প্রস্থ ও 300px উচ্চতা) */
+        /* মাঝখানের প্রোফাইল কার্ড (স্লাইডারের সমান 300px স্কেলে) */
         .card {
             position: relative;
             background-color: #ffffff;
@@ -364,7 +364,7 @@
             margin-right: 8px;
         }
 
-        /* প্রোফাইল কার্ডের নিচের অফিস লোকেশন ম্যাপ বক্স (একই 300px স্কেলে) */
+        /* অফিস লোকেশন ম্যাপ বক্স */
         .map-container-box {
             width: 300px;
             background-color: #ffffff;
@@ -402,6 +402,7 @@
         @media (max-width: 1020px) {
             .main-container {
                 align-items: center;
+                padding-top: 40px;
             }
             .slider-wrapper, .middle-column, .card, .map-container-box, .slider-box, .slider-caption {
                 width: 100%;
@@ -477,7 +478,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (স্লাইডারের সমান 300x300 স্কেলের প্রোফাইল কার্ড + নিচে 300px স্কেলের লাইভ ম্যাপ) -->
+        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড ও ম্যাপ) -->
         <div class="middle-column">
             
             <!-- প্রোফাইল কার্ড -->
@@ -517,7 +518,7 @@
                     <img src="image2.png" alt="টোটাল স্টেশন সার্ভে">
                     <img src="image3.png" alt="জমির সীমানা চিহ্নিতকরণ">
                     <img src="image4.png" alt="ডিজিটাল ট্যাব ম্যাপ">
-                    <img src="image5.png" alt="অটো লেভেল সার্ভে">
+                    <img src="image5.png" alt="អটো লেভেল সার্ভে">
                 </div>
             </div>
             <div class="slider-caption right-caption">
