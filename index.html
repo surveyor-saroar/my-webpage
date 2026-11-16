@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #74ebd5, #9face6);
+            background-color: #0b0d13; /* জেমিনির মতো ডার্ক ব্যাকগ্রাউন্ড */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -23,31 +23,51 @@
             overflow-x: hidden;
         }
 
-        /* ব্যাকগ্রাউন্ডে লিক লাইট (Liquid Light) অ্যানিমেশন লেয়ার */
+        /* পেজ ওপেন হওয়ার সাথে সাথে নিচ থেকে নীলচে-বেগুনি গ্লোয়িং কালার ফুটে ওঠার অ্যানিমেশন */
         body::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,255,136,0.1) 40%, transparent 70%);
-            animation: liquidLight 8s ease-in-out infinite alternate;
+            position: fixed;
+            bottom: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130vw;
+            height: 75vh;
+            background: radial-gradient(ellipse at center, 
+                rgba(30, 64, 175, 0.55) 0%, 
+                rgba(49, 46, 129, 0.35) 35%, 
+                rgba(15, 23, 42, 0.1) 65%, 
+                transparent 80%);
+            filter: blur(45px);
             z-index: -1;
+            pointer-events: none;
+            animation: bloomReveal 2.2s ease-out forwards, floorGlowPulse 7s ease-in-out 2.2s infinite alternate;
         }
 
-        @keyframes liquidLight {
+        /* ওপেন হওয়ার সাথে সাথে কালার ফুটে ওঠার অ্যানিমেশন */
+        @keyframes bloomReveal {
             0% {
-                transform: scale(1) translate(-30px, -20px);
-                opacity: 0.5;
-            }
-            50% {
-                transform: scale(1.2) translate(30px, 20px);
-                opacity: 0.8;
+                opacity: 0;
+                transform: translateX(-50%) translateY(80px) scale(0.7);
             }
             100% {
-                transform: scale(1) translate(-20px, 30px);
-                opacity: 0.5;
+                opacity: 1;
+                transform: translateX(-50%) translateY(0px) scale(1);
+            }
+        }
+
+        /* ফুটে ওঠার পর নিচের অংশে মৃদু আলোর ঢেউ */
+        @keyframes floorGlowPulse {
+            0% {
+                opacity: 0.85;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-48%) scale(1.08);
+            }
+            100% {
+                opacity: 0.85;
+                transform: translateX(-52%) scale(1.03);
             }
         }
 
@@ -56,7 +76,7 @@
             background-color: #009432; 
             width: 100%;
             padding: 0 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             z-index: 10;
         }
 
@@ -103,33 +123,34 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #ffffff;
+            background-color: #161b26;
             min-width: 220px;
             list-style: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
             border-radius: 0 0 6px 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
         }
 
         .dropdown-menu li a {
             display: block;
             padding: 12px 15px;
-            color: #2c3e50;
+            color: #e2e8f0;
             text-decoration: none;
             font-size: 14px;
-            border-bottom: 1px solid #f1f2f6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .dropdown-menu li a:hover {
-            background-color: #e8f8f5;
-            color: #009432;
+            background-color: #009432;
+            color: #ffffff;
         }
 
         .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার (সকল সাইডের স্কেল ও দূরত্ব সমান রাখা হয়েছে) */
+        /* মূল কন্টেন্ট কন্টেইনার */
         .main-container {
             flex: 1;
             display: flex;
@@ -155,8 +176,9 @@
             height: 300px;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.25);
-            background-color: #ffffff;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: #131620;
         }
 
         .slider-track {
@@ -211,8 +233,8 @@
             top: 0;
             font-size: 16px;
             font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            color: #e2e8f0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
             animation: captionFade 25s infinite;
             opacity: 0;
         }
@@ -235,7 +257,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের কলাম (স্লাইডারের সমান 300x300 স্কেলে ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) */
+        /* মাঝখানের কলাম (ডার্ক গ্লাস ইফেক্টসহ ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -245,10 +267,10 @@
             height: 300px;
             padding: 15px;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.45);
+            background: rgba(25, 32, 52, 0.55);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(99, 132, 255, 0.25);
         }
 
         .fb-btn {
@@ -261,15 +283,17 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            background-color: #2c3e50;
+            background-color: #1e293b;
             color: #ffffff;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
 
         .fb-btn:hover {
-            background-color: #1a252f;
+            background-color: #0f172a;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
         .fb-btn i {
@@ -291,7 +315,7 @@
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
             border: 2px solid #009432;
         }
 
@@ -322,22 +346,24 @@
 
         /* নিচের সবুজ ফুটার বার (Footer Bar) */
         .footer-bar {
-            background-color: #00c853;
+            background-color: rgba(0, 148, 50, 0.9);
+            backdrop-filter: blur(8px);
             width: 100%;
             padding: 10px 20px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
             z-index: 10;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .footer-badge {
             background-color: #ffffff;
-            color: #2d3436;
+            color: #1e293b;
             padding: 6px 14px;
             border-radius: 4px;
             font-size: 13px;
@@ -345,7 +371,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
             text-decoration: none;
         }
 
@@ -359,7 +385,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #ffffff;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
             background-color: #ffffff;
         }
 
@@ -370,7 +396,7 @@
             border-radius: 4px;
             font-size: 15px;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
         }
 
         @media (max-width: 1020px) {
@@ -458,7 +484,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড ছাড়া সমান স্কেলে ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) -->
+        <!-- ২. মাঝখানের কলাম (ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -501,7 +527,7 @@
 
     </div>
 
-    <!-- নিচের নতুন সবুজ ফুটার বার -->
+    <!-- নিচের সবুজ ফুটার বার -->
     <footer class="footer-bar">
         <div class="footer-badge">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
