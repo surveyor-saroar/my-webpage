@@ -19,6 +19,36 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ব্যাকগ্রাউন্ডে লিক লাইট (Liquid Light) অ্যানিমেশন লেয়ার */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,255,136,0.1) 40%, transparent 70%);
+            animation: liquidLight 8s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes liquidLight {
+            0% {
+                transform: scale(1) translate(-30px, -20px);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2) translate(30px, 20px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) translate(-20px, 30px);
+                opacity: 0.5;
+            }
         }
 
         /* ওপরের সবুজ মেনু বার */
@@ -27,6 +57,7 @@
             width: 100%;
             padding: 0 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
         }
 
         .nav-list {
@@ -107,6 +138,7 @@
             gap: 40px;
             padding: 40px 20px;
             flex-wrap: wrap;
+            z-index: 2;
         }
 
         /* স্লাইডার র‍্যাপার */
@@ -133,7 +165,7 @@
             animation: slideShow 25s infinite;
         }
 
-        /* ডান দিকের স্লাইডারের জন্য আলাদা ক্লাস যাতে ছবি ভিন্ন সময়ে বা ভিন্ন অর্ডারে চলে */
+        /* ডান দিকের স্লাইডারের জন্য আলাদা অ্যানিমেশন */
         .right-slider .slider-track {
             animation: rightSlideShow 25s infinite;
         }
@@ -155,7 +187,7 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ডান স্লাইডারের অ্যানিমেশন (অন্য ছবি দিয়ে শুরু হবে) */
+        /* ডান স্লাইডারের অ্যানিমেশন */
         @keyframes rightSlideShow {
             0%, 15%   { transform: translateX(-40%); }
             20%, 35%  { transform: translateX(-60%); }
@@ -195,7 +227,7 @@
         .left-caption span:nth-child(4) { animation-delay: 15s; }
         .left-caption span:nth-child(5) { animation-delay: 20s; }
 
-        /* ডান স্লাইডারের ক্যাপশন টাইমিং (সঠিক ছবির সাথে মিল রেখে শিফট করা) */
+        /* ডান স্লাইডারের ক্যাপশন টাইমিং */
         .right-caption span:nth-child(1) { animation-delay: 10s; }
         .right-caption span:nth-child(2) { animation-delay: 15s; }
         .right-caption span:nth-child(3) { animation-delay: 20s; }
@@ -416,7 +448,7 @@
             </a>
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (ভিন্ন ছবি ও টাইমিং সহ) -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box right-slider">
                 <div class="slider-track">
