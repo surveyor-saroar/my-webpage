@@ -27,7 +27,7 @@
             background-color: #009432; 
             width: 100%;
             padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .nav-list {
@@ -76,7 +76,7 @@
             background-color: #ffffff;
             min-width: 220px;
             list-style: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             border-radius: 0 0 6px 6px;
             z-index: 1000;
         }
@@ -110,31 +110,32 @@
             flex-wrap: wrap;
         }
 
-        /* বাম পাশের ইমেজ স্লাইডার বক্স */
+        /* বাম পাশের ইমেজ স্লাইডার বক্স (শক্তিশালী ড্রপ শেডো সহ) */
         .slider-box {
             width: 320px;
             height: 320px;
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            /* এখানে ড্রপ শেডো বা বক্স শ্যাডো দেওয়া হয়েছে */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
             background-color: #ffffff;
         }
 
         .slider-track {
             display: flex;
-            width: 500%; /* ৫টি ছবির জন্য ৫০০% করা হলো */
+            width: 500%;
             height: 100%;
             animation: slideShow 25s infinite;
         }
 
         .slider-track img {
-            width: 20%; /* প্রতিটি ছবি ২০% (মোট ১০০%) জায়গা নেবে */
+            width: 20%;
             height: 100%;
             object-fit: cover;
             flex-shrink: 0;
         }
 
-        /* ৫টি ছবি নিখুঁতভাবে স্লাইড হওয়ার অ্যানিমেশন */
+        /* স্লাইড অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -144,12 +145,13 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ডান পাশের প্রোফাইল কার্ড */
+        /* ডান পাশের প্রোফাইল কার্ড (শক্তিশালী ড্রপ শেডো সহ) */
         .card {
             background-color: #ffffff;
             padding: 35px 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            /* এখানেও আকর্ষণীয় ড্রপ শেডো দেওয়া হয়েছে */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
             text-align: center;
             width: 380px;
             max-width: 100%;
@@ -162,6 +164,7 @@
             object-fit: cover;
             margin-bottom: 15px;
             border: 3px solid #f4f7f6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .card h1 {
@@ -197,13 +200,14 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-      id="fb-btn-link"
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .fb-btn:hover {
             background-color: #1a252f;
+            transform: translateY(-2px);
         }
 
         .fb-btn i {
@@ -287,7 +291,7 @@
                 <img src="image1.png" alt="সার্ভে ছবি ১">
                 <img src="image2.png" alt="সার্ভে ছবি ২">
                 <img src="image3.png" alt="সার্ভে ছবি ৩">
-                <img src="image4.png" alt="সার্ভੇ ছবি ৪">
+                <img src="image4.png" alt="সার্ভে ছবি ৪">
                 <img src="image5.png" alt="সার্ভে ছবি ৫">
             </div>
         </div>
@@ -305,7 +309,7 @@
 
             <!-- যোগাযোগের ঠিকানা ও মোবাইল নম্বর বক্স -->
             <div class="contact-box">
-                <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;"></i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
+                <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;">*</i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
                 <p><i class="fa-solid fa-phone" style="color: #009432; width: 20px;"></i> <strong>মোবাইল:</strong> <a href="tel:01817068114" style="color: #0984e3; text-decoration: none;">01817068114</a></p>
             </div>
 
