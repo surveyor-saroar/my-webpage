@@ -165,7 +165,6 @@
             animation: slideShow 25s infinite;
         }
 
-        /* ডান দিকের স্লাইডারের জন্য আলাদা অ্যানিমেশন */
         .right-slider .slider-track {
             animation: rightSlideShow 25s infinite;
         }
@@ -177,7 +176,6 @@
             flex-shrink: 0;
         }
 
-        /* বাম স্লাইডারের অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -187,7 +185,6 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ডান স্লাইডারের অ্যানিমেশন */
         @keyframes rightSlideShow {
             0%, 15%   { transform: translateX(-40%); }
             20%, 35%  { transform: translateX(-60%); }
@@ -197,7 +194,6 @@
             100%      { transform: translateX(-40%); }
         }
 
-        /* ছবির নিচের অ্যানিমেটেড সাদা নাম বা ক্যাপশন */
         .slider-caption {
             margin-top: 15px;
             height: 30px;
@@ -220,14 +216,12 @@
             opacity: 0;
         }
 
-        /* বাম স্লাইডারের ক্যাপশন টাইমিং */
         .left-caption span:nth-child(1) { animation-delay: 0s; }
         .left-caption span:nth-child(2) { animation-delay: 5s; }
         .left-caption span:nth-child(3) { animation-delay: 10s; }
         .left-caption span:nth-child(4) { animation-delay: 15s; }
         .left-caption span:nth-child(5) { animation-delay: 20s; }
 
-        /* ডান স্লাইডারের ক্যাপশন টাইমিং */
         .right-caption span:nth-child(1) { animation-delay: 10s; }
         .right-caption span:nth-child(2) { animation-delay: 15s; }
         .right-caption span:nth-child(3) { animation-delay: 20s; }
@@ -240,7 +234,15 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের প্রোফাইল কার্ড (নিয়ন বর্ডারসহ) */
+        /* মাঝখানের কন্টেইনার (প্রোফাইল কার্ড এবং নিচের ম্যাপ একত্রে) */
+        .middle-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* মাঝখানের প্রোফাইল কার্ড */
         .card {
             position: relative;
             background-color: #ffffff;
@@ -324,13 +326,15 @@
         .fb-btn {
             display: inline-flex;
             align-items: center;
-            background-color: #2c3e50;
-            color: #ffffff;
-            padding: 9px 20px;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 15px;
+            background-color: #2c3e50;
+            color: #ffffff;
             transition: background-color 0.3s, transform 0.2s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -353,8 +357,42 @@
             margin-right: 8px;
         }
 
+        /* প্রোফাইল কার্ডের নিচের অফিস লোকেশন ম্যাপ বক্স */
+        .map-container-box {
+            width: 350px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 2px solid #009432;
+        }
+
+        .map-header {
+            background-color: #009432;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .map-iframe-wrapper {
+            width: 100%;
+            height: 180px;
+        }
+
+        .map-iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         @media (max-width: 1100px) {
-            .slider-wrapper, .card {
+            .slider-wrapper, .middle-column, .card, .map-container-box {
                 width: 100%;
                 max-width: 350px;
             }
@@ -382,7 +420,7 @@
             <li class="dropdown">
                 <a href="#">যোগাযোগ <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #009432;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
+                    <li><a href="https://maps.app.goo.gl/3m1!4b1!4m6!3m5!1s0x375461ba729392a3:0xf0ed69f2b1592cbf" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #009432;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
                     <li><a href="tel:01817068114"><i class="fa-solid fa-phone" style="margin-right: 8px; color: #009432;"></i> 01817068114</a></li>
                 </ul>
             </li>
@@ -431,21 +469,36 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের প্রোফাইল কার্ড -->
-        <div class="card">
-            <img src="my-pic.png" alt="আমার ছবি" class="profile-img">
-            <h1>স্বাগতম</h1>
-            <p class="profession">ডিজিটাল মিডিয়া ক্রিয়েটর ও ল্যান্ড সার্ভেয়ার</p>
+        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড + নিচে লাইভ গুগল ম্যাপ) -->
+        <div class="middle-column">
+            
+            <!-- প্রোফাইল কার্ড -->
+            <div class="card">
+                <img src="my-pic.png" alt="আমার ছবি" class="profile-img">
+                <h1>স্বাগতম</h1>
+                <p class="profession">ডিজিটাল মিডিয়া ক্রিয়েটর ও ল্যান্ড সার্ভেয়ার</p>
 
-            <div class="contact-box">
-                <p style="margin-bottom: 6px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;"></i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
-                <p><i class="fa-solid fa-phone" style="color: #009432; width: 20px;"></i> <strong>মোবাইল:</strong> <a href="tel:01817068114" style="color: #0984e3; text-decoration: none;">01817068114</a></p>
+                <div class="contact-box">
+                    <p style="margin-bottom: 6px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;"></i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
+                    <p><i class="fa-solid fa-phone" style="color: #009432; width: 20px;"></i> <strong>মোবাইল:</strong> <a href="tel:01817068114" style="color: #0984e3; text-decoration: none;">01817068114</a></p>
+                </div>
+
+                <a href="https://facebook.com" target="_blank" class="fb-btn">
+                    <i class="fa-brands fa-facebook"></i> 
+                    ফেসবুক পেজ
+                </a>
             </div>
 
-            <a href="https://facebook.com" target="_blank" class="fb-btn">
-                <i class="fa-brands fa-facebook"></i> 
-                ফেসবুক পেজ
-            </a>
+            <!-- আপনার দেওয়া নমুনা অনুযায়ী নিচের অফিস লোকেশন ম্যাপ বক্স -->
+            <div class="map-container-box">
+                <div class="map-header">
+                    <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ (কাদুটি বাজার, চান্দিনা)
+                </div>
+                <div class="map-iframe-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5447781351187!2d90.9619575!3d23.4025711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375461ba729392a3%3A0xf0ed69f2b1592cbf!2sKaduti%20Bazar!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
         </div>
 
         <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
