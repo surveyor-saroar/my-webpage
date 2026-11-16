@@ -133,6 +133,11 @@
             animation: slideShow 25s infinite;
         }
 
+        /* ডান দিকের স্লাইডারের জন্য আলাদা ক্লাস যাতে ছবি ভিন্ন সময়ে বা ভিন্ন অর্ডারে চলে */
+        .right-slider .slider-track {
+            animation: rightSlideShow 25s infinite;
+        }
+
         .slider-track img {
             width: 20%;
             height: 100%;
@@ -140,6 +145,7 @@
             flex-shrink: 0;
         }
 
+        /* বাম স্লাইডারের অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -149,7 +155,17 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ছবির নিচের অ্যানিমেটেড নাম বা ক্যাপশন (সাদা কালার ও ফেড-ইন ইফেক্ট) */
+        /* ডান স্লাইডারের অ্যানিমেশন (অন্য ছবি দিয়ে শুরু হবে) */
+        @keyframes rightSlideShow {
+            0%, 15%   { transform: translateX(-40%); }
+            20%, 35%  { transform: translateX(-60%); }
+            40%, 55%  { transform: translateX(-80%); }
+            60%, 75%  { transform: translateX(0%); }
+            80%, 95%  { transform: translateX(-20%); }
+            100%      { transform: translateX(-40%); }
+        }
+
+        /* ছবির নিচের অ্যানিমেটেড সাদা নাম বা ক্যাপশন */
         .slider-caption {
             margin-top: 15px;
             height: 30px;
@@ -166,18 +182,25 @@
             top: 0;
             font-size: 17px;
             font-weight: bold;
-            color: #ffffff; /* সাদা কালার */
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* লেখার পেছনে হালকা শ্যাডো যাতে স্পষ্টভাবে ফুটে ওঠে */
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
             animation: captionFade 25s infinite;
             opacity: 0;
         }
 
-        /* ৫টি ছবির টাইমিং অনুযায়ী ফেড-ইন অ্যানিমেশন */
-        .slider-caption span:nth-child(1) { animation-delay: 0s; }
-        .slider-caption span:nth-child(2) { animation-delay: 5s; }
-        .slider-caption span:nth-child(3) { animation-delay: 10s; }
-        .slider-caption span:nth-child(4) { animation-delay: 15s; }
-        .slider-caption span:nth-child(5) { animation-delay: 20s; }
+        /* বাম স্লাইডারের ক্যাপশন টাইমিং */
+        .left-caption span:nth-child(1) { animation-delay: 0s; }
+        .left-caption span:nth-child(2) { animation-delay: 5s; }
+        .left-caption span:nth-child(3) { animation-delay: 10s; }
+        .left-caption span:nth-child(4) { animation-delay: 15s; }
+        .left-caption span:nth-child(5) { animation-delay: 20s; }
+
+        /* ডান স্লাইডারের ক্যাপশন টাইমিং (সঠিক ছবির সাথে মিল রেখে শিফট করা) */
+        .right-caption span:nth-child(1) { animation-delay: 10s; }
+        .right-caption span:nth-child(2) { animation-delay: 15s; }
+        .right-caption span:nth-child(3) { animation-delay: 20s; }
+        .right-caption span:nth-child(4) { animation-delay: 0s; }
+        .right-caption span:nth-child(5) { animation-delay: 5s; }
 
         @keyframes captionFade {
             0%, 2%   { opacity: 0; transform: translateY(6px); }
@@ -356,7 +379,7 @@
     <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার ও অ্যানিমেটেড সাদা নাম -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -367,7 +390,7 @@
                     <img src="image5.png" alt="অটো লেভেল সার্ভে">
                 </div>
             </div>
-            <div class="slider-caption">
+            <div class="slider-caption left-caption">
                 <span>স্যাটেলাইট বা মাস্টার প্ল্যান</span>
                 <span>টোটাল স্টেশন সার্ভে</span>
                 <span>জমির সীমানা চিহ্নিতকরণ</span>
@@ -393,9 +416,9 @@
             </a>
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার ও অ্যানিমেটেড সাদা নাম -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (ভিন্ন ছবি ও টাইমিং সহ) -->
         <div class="slider-wrapper">
-            <div class="slider-box">
+            <div class="slider-box right-slider">
                 <div class="slider-track">
                     <img src="image1.png" alt="স্যাটেলাইট বা মাস্টার প্ল্যান">
                     <img src="image2.png" alt="টোটাল স্টেশন সার্ভে">
@@ -404,7 +427,7 @@
                     <img src="image5.png" alt="অটো লেভেল সার্ভে">
                 </div>
             </div>
-            <div class="slider-caption">
+            <div class="slider-caption right-caption">
                 <span>স্যাটেলাইট বা মাস্টার প্ল্যান</span>
                 <span>টোটাল স্টেশন সার্ভে</span>
                 <span>জমির সীমানা চিহ্নিতকরণ</span>
