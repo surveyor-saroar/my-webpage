@@ -15,7 +15,7 @@
         }
 
         body {
-            background-color: #0b0d13; /* জেমিনির মতো ডার্ক ব্যাকগ্রাউন্ড */
+            background-color: #0b0d13; /* ডার্ক ব্যাকগ্রাউন্ড */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -43,7 +43,6 @@
             animation: bloomReveal 2.2s ease-out forwards, floorGlowPulse 7s ease-in-out 2.2s infinite alternate;
         }
 
-        /* ওপেন হওয়ার সাথে সাথে কালার ফুটে ওঠার অ্যানিমেশন */
         @keyframes bloomReveal {
             0% {
                 opacity: 0;
@@ -55,7 +54,6 @@
             }
         }
 
-        /* ফুটে ওঠার পর নিচের অংশে মৃদু আলোর ঢেউ */
         @keyframes floorGlowPulse {
             0% {
                 opacity: 0.85;
@@ -71,12 +69,13 @@
             }
         }
 
-        /* ওপরের সবুজ মেনু বার */
+        /* ওপরের রয়েল ব্লু (Royal Blue) মেনু বার */
         .navbar {
-            background-color: #009432; 
+            background-color: #1d4ed8; 
             width: 100%;
             padding: 0 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 10;
         }
 
@@ -95,7 +94,7 @@
         .nav-list > li > a {
             display: flex;
             align-items: center;
-            color: #e0ffff;
+            color: #ffffff;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 16px;
@@ -104,7 +103,7 @@
         }
 
         .nav-list > li > a:hover {
-            background-color: #006266; 
+            background-color: #1e3a8a; 
             color: #ffffff; 
         }
 
@@ -117,32 +116,33 @@
             margin-left: 8px;
         }
 
-        /* ড্রপডাউন সাব-মেনু */
+        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু (রয়েল ব্লু ও সাদা ফন্ট) */
         .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #161b26;
-            min-width: 220px;
+            background-color: #1e40af;
+            min-width: 230px;
             list-style: none;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
             border-radius: 0 0 6px 6px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 1000;
         }
 
         .dropdown-menu li a {
             display: block;
             padding: 12px 15px;
-            color: #e2e8f0;
+            color: #ffffff;
             text-decoration: none;
             font-size: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            transition: background-color 0.2s;
         }
 
         .dropdown-menu li a:hover {
-            background-color: #009432;
+            background-color: #2563eb;
             color: #ffffff;
         }
 
@@ -150,7 +150,7 @@
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার */
+        /* মূল কন্টেন্ট কন্টেইনার (অপরিবর্তিত) */
         .main-container {
             flex: 1;
             display: flex;
@@ -162,7 +162,7 @@
             z-index: 2;
         }
 
-        /* স্লাইডার র‍্যাপার */
+        /* স্লাইডার র‍্যাপার (অপরিবর্তিত) */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
@@ -170,7 +170,7 @@
             width: 300px;
         }
 
-        /* ইমেজ স্লাইডার বক্স */
+        /* ইমেজ স্লাইডার বক্স (অপরিবর্তিত) */
         .slider-box {
             width: 300px;
             height: 300px;
@@ -233,7 +233,7 @@
             top: 0;
             font-size: 16px;
             font-weight: bold;
-            color: #e2e8f0;
+            color: #ffffff;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
             animation: captionFade 25s infinite;
             opacity: 0;
@@ -257,7 +257,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের কলাম (ডার্ক গ্লাস ইফেক্টসহ ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) */
+        /* মাঝখানের কলাম (অপরিবর্তিত) */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -309,7 +309,7 @@
             margin-right: 10px;
         }
 
-        /* মাঝের ম্যাপ বক্স */
+        /* মাঝের ম্যাপ বক্স (অপরিবর্তিত) */
         .map-container-box {
             width: 100%;
             background-color: #ffffff;
@@ -344,59 +344,52 @@
             display: block;
         }
 
-        /* নিচের সবুজ ফুটার বার (Footer Bar) */
+        /* নিচের রয়েল ব্লু ফুটার বার (কোনো সাদা ব্লক ছাড়াই সাদা ফন্টে) */
         .footer-bar {
-            background-color: rgba(0, 148, 50, 0.9);
-            backdrop-filter: blur(8px);
+            background-color: #1d4ed8; 
             width: 100%;
-            padding: 10px 20px;
+            padding: 12px 20px;
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 24px;
             flex-wrap: wrap;
             z-index: 10;
             margin-bottom: 18px;
+            color: #ffffff;
         }
 
-        .footer-badge {
-            background-color: #ffffff;
-            color: #1e293b;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 13px;
+        .footer-item {
+            color: #ffffff;
+            font-size: 14px;
             font-weight: bold;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            gap: 7px;
             text-decoration: none;
         }
 
-        .footer-badge i {
-            color: #009432;
+        .footer-item i {
+            color: #ffffff;
+            font-size: 15px;
         }
 
         .footer-profile-pic {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #ffffff;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-            background-color: #ffffff;
         }
 
         .footer-title {
-            background-color: #ffffff;
-            color: #0984e3;
-            padding: 6px 16px;
-            border-radius: 4px;
+            color: #ffffff;
             font-size: 15px;
             font-weight: bold;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.3px;
         }
 
         @media (max-width: 1020px) {
@@ -419,7 +412,7 @@
 </head>
 <body>
 
-    <!-- ওপরের সবুজ মেনু বার -->
+    <!-- ওপরের রয়েল ব্লু মেনু বার -->
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="#" class="home-icon"><i class="fa-solid fa-house"></i></a></li>
@@ -435,8 +428,8 @@
             <li class="dropdown">
                 <a href="#">যোগাযোগ <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="https://maps.google.com/?q=Kaduti+Bazar,Chandina,Comilla" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #009432;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
-                    <li><a href="tel:01817068114"><i class="fa-solid fa-phone" style="margin-right: 8px; color: #009432;"></i> 01817068114</a></li>
+                    <li><a href="https://maps.google.com/?q=Kaduti+Bazar,Chandina,Comilla" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #ffffff;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
+                    <li><a href="tel:01817068114"><i class="fa-solid fa-phone" style="margin-right: 8px; color: #ffffff;"></i> 01817068114</a></li>
                 </ul>
             </li>
 
@@ -464,7 +457,7 @@
     <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার (সম্পূর্ণ অপরিবর্তিত) -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -484,7 +477,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (ফেসবুক বাটন ও লাইভ গুগল ম্যাপ) -->
+        <!-- ২. মাঝখানের কলাম ও ম্যাপ বক্স (সম্পূর্ণ অপরিবর্তিত) -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -505,7 +498,7 @@
 
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (সম্পূর্ণ অপরিবর্তিত) -->
         <div class="slider-wrapper">
             <div class="slider-box right-slider">
                 <div class="slider-track">
@@ -527,14 +520,14 @@
 
     </div>
 
-    <!-- নিচের সবুজ ফুটার বার -->
+    <!-- নিচের রয়েল ব্লু ফুটার বার (কোনো সাদা ব্লক ছাড়াই সাদা ফন্টে) -->
     <footer class="footer-bar">
-        <div class="footer-badge">
+        <div class="footer-item">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
         </div>
         
-        <a href="tel:01817068114" class="footer-badge">
-            <i class="fa-solid fa-phone"></i> মোবাইল: <span style="color: #0984e3;">01817068114</span>
+        <a href="tel:01817068114" class="footer-item">
+            <i class="fa-solid fa-phone"></i> মোবাইল: 01817068114
         </a>
 
         <img src="my-pic.png" alt="প্রোফাইল ছবি" class="footer-profile-pic">
