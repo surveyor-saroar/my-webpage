@@ -69,7 +69,7 @@
             }
         }
 
-        /* ওপরের হেডার মেনু বার (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
+        /* ওপরের হেডার মেনু বার */
         .navbar {
             background: rgba(25, 32, 52, 0.55);
             backdrop-filter: blur(12px);
@@ -109,6 +109,18 @@
             color: #ffffff; 
         }
 
+        /* হেডারের হোম আইকনের বাম পাশের সার্কেল লোগো */
+        .header-profile-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid #ffffff;
+            margin-right: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+            flex-shrink: 0;
+        }
+
         .home-icon i {
             font-size: 20px;
         }
@@ -118,7 +130,7 @@
             margin-left: 8px;
         }
 
-        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
+        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -368,7 +380,7 @@
             display: block;
         }
 
-        /* নিচের ফুটার বার (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
+        /* নিচের গ্লাস ফুটার বার (অপরিবর্তিত) */
         .footer-bar {
             background: rgba(25, 32, 52, 0.55);
             backdrop-filter: blur(12px);
@@ -442,7 +454,12 @@
     <!-- ওপরের গ্লাস হেডার মেনু বার -->
     <nav class="navbar">
         <ul class="nav-list">
-            <li><a href="#" class="home-icon"><i class="fa-solid fa-house"></i></a></li>
+            <li>
+                <a href="#" class="home-icon">
+                    <img src="my-pic.png" alt="প্রোফাইল লোগো" class="header-profile-circle">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </li>
             
             <li class="dropdown">
                 <a href="#">ভূমি-তথ্য ও সেবা <i class="fa-solid fa-chevron-down arrow"></i></a>
@@ -484,7 +501,7 @@
     <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার (সম্পূর্ণ অপরিবর্তিত) -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -504,7 +521,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স (সম্পূর্ণ অপরিবর্তিত) -->
+        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -526,7 +543,7 @@
 
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (সম্পূর্ণ অপরিবর্তিত) -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box right-slider">
                 <div class="slider-track">
