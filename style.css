@@ -1,9 +1,218 @@
-/* বাম পাশের ইমেজ স্লাইডার বক্স (৩/৩ সাইজের মতো একটু ছোট ও স্কয়ার) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ওপরের সবুজ মেনু বার */
+.navbar {
+    background-color: #009432; 
+    width: 100%;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-list > li {
+    position: relative;
+}
+
+.nav-list > li > a {
+    display: flex;
+    align-items: center;
+    color: #e0ffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-list > li > a:hover {
+    background-color: #006266; 
+    color: #ffffff; 
+}
+
+.home-icon i {
+    font-size: 20px;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* ড্রপডাউন সাব-মেনু */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 6px 6px;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e8f8f5;
+    color: #009432;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* মূল কন্টেন্ট কন্টেইনার (বাম ও ডান পাশ পাশাপাশি রাখার জন্য) */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+/* বাম পাশের ইমেজ স্লাইডার বক্স (৩২০x৩২০ পিক্সেল সাইজ) */
 .slider-box {
-    width: 320px;   /* আগে ৩৮০ পিক্সেল ছিল, কমিয়ে ৩২০ পিক্সেল করা হলো */
-    height: 320px;  /* উচ্চতাও সমানভাবে ৩২০ পিক্সেল রাখা হলো */
+    width: 320px;
+    height: 320px;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
+}
+
+.slider-track {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: slideShow 15s infinite;
+}
+
+.slider-track img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* স্লাইড অ্যানিমেশন */
+@keyframes slideShow {
+    0%, 16%   { transform: translateX(0%); }
+    20%, 36%  { transform: translateX(-20%); }
+    40%, 56%  { transform: translateX(-40%); }
+    60%, 76%  { transform: translateX(-60%); }
+    80%, 96%  { transform: translateX(-80%); }
+    100%      { transform: translateX(0%); }
+}
+
+/* ডান পাশের প্রোফাইল কার্ড */
+.card {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 380px;
+    max-width: 100%;
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #f4f7f6;
+}
+
+.card h1 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.profession {
+    color: #0984e3;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-box {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #2d3436;
+    border: 1px solid #dfe6e9;
+}
+
+.fb-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.fb-btn:hover {
+    background-color: #1a252f;
+}
+
+.fb-btn i {
+    background-color: #ffffff;
+    color: #1877f2;
+    font-size: 20px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+@media (max-width: 450px) {
+    .slider-box, .card {
+        width: 100%;
+    }
+    .slider-box {
+        height: 280px;
+    }
 }
