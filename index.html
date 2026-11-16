@@ -109,7 +109,7 @@
             flex-wrap: wrap;
         }
 
-        /* প্রতিটি স্লাইডার র‍্যাপার (বক্স এবং ক্যাপশন একসঙ্গে ধরে রাখার জন্য) */
+        /* স্লাইডার র‍্যাপার */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
@@ -140,7 +140,6 @@
             flex-shrink: 0;
         }
 
-        /* স্লাইড অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -150,7 +149,7 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ছবির নিচের অ্যানিমেটেড নাম বা ক্যাপশন স্টাইল */
+        /* ছবির নিচের অ্যানিমেটেড নাম বা ক্যাপশন (সাদা কালার ও ফেড-ইন ইফেক্ট) */
         .slider-caption {
             margin-top: 15px;
             height: 30px;
@@ -165,28 +164,28 @@
             width: 100%;
             left: 0;
             top: 0;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
-            color: #1e272e;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-            animation: captionAnim 25s infinite;
+            color: #ffffff; /* সাদা কালার */
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* লেখার পেছনে হালকা শ্যাডো যাতে স্পষ্টভাবে ফুটে ওঠে */
+            animation: captionFade 25s infinite;
             opacity: 0;
         }
 
-        /* ৫টি ছবির টাইমিং অনুযায়ী টেক্সট অ্যানিমেশন */
+        /* ৫টি ছবির টাইমিং অনুযায়ী ফেড-ইন অ্যানিমেশন */
         .slider-caption span:nth-child(1) { animation-delay: 0s; }
         .slider-caption span:nth-child(2) { animation-delay: 5s; }
         .slider-caption span:nth-child(3) { animation-delay: 10s; }
         .slider-caption span:nth-child(4) { animation-delay: 15s; }
         .slider-caption span:nth-child(5) { animation-delay: 20s; }
 
-        @keyframes captionAnim {
-            0%, 3%   { opacity: 0; transform: translateY(10px); }
+        @keyframes captionFade {
+            0%, 2%   { opacity: 0; transform: translateY(6px); }
             5%, 15%  { opacity: 1; transform: translateY(0px); }
-            18%, 100% { opacity: 0; transform: translateY(-10px); }
+            18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের প্রোফাইল কার্ড (ঘূর্ণায়মান নিয়ন বর্ডার সহ) */
+        /* মাঝখানের প্রোফাইল কার্ড (নিয়ন বর্ডারসহ) */
         .card {
             position: relative;
             background-color: #ffffff;
@@ -354,10 +353,10 @@
         </ul>
     </nav>
 
-    <!-- মূল কন্টেন্ট: বাম স্লাইডার, মাঝখানে প্রোফাইল কার্ড, ডান স্লাইডার -->
+    <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার ও অ্যানিমেটেড নাম -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার ও অ্যানিমেটেড সাদা নাম -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -377,7 +376,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের প্রোফাইল কার্ড (নিয়ন বর্ডারসহ) -->
+        <!-- ২. মাঝখানের প্রোফাইল কার্ড -->
         <div class="card">
             <img src="my-pic.png" alt="আমার ছবি" class="profile-img">
             <h1>স্বাগতম</h1>
@@ -394,7 +393,7 @@
             </a>
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার ও অ্যানিমেটেড নাম -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার ও অ্যানিমেটেড সাদা নাম -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
