@@ -1,19 +1,117 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ওপরের সবুজ মেনু বারের ডিজাইন */
+.navbar {
+    background-color: #009432; 
+    width: 100%;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list {
+    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    flex-wrap: wrap;
+}
+
+.nav-list > li {
+    position: relative;
+}
+
+/* মেনু বারের টাইটেলগুলোর লাইট সায়ান কালার */
+.nav-list > li > a {
+    display: flex;
+    align-items: center;
+    color: #e0ffff; /* লাইট সায়ান (Light Cyan) কালার */
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-list > li > a:hover {
+    background-color: #006266; 
+    color: #ffffff; /* মাউস নিলে উজ্জ্বল সাদা দেখাবে */
+}
+
+.home-icon i {
+    font-size: 20px;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* ড্রপডাউন সাব-মেনু ডিজাইন */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 6px 6px;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 15px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #e8f8f5;
+    color: #009432;
+}
+
+/* মাউস নিলে ড্রপডাউন মেনু দেখাবে */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* প্রোফাইল কার্ড মাঝখানে রাখার ডিজাইন */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
 }
 
 .card {
     background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
     max-width: 400px;
-    width: 90%;
+    width: 100%;
+}
+
+.card h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 28px;
 }
