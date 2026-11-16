@@ -98,18 +98,25 @@
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার (তিনটি অংশ পাশাপাশি সাজানোর জন্য) */
+        /* মূল কন্টেন্ট কন্টেইনার */
         .main-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
             padding: 40px 20px;
             flex-wrap: wrap;
         }
 
-        /* ইমেজ স্লাইডার বক্স (বাম ও ডান উভয় স্লাইডারের জন্য কমন ডিজাইন) */
+        /* প্রতিটি স্লাইডার র‍্যাপার (বক্স এবং ক্যাপশন একসঙ্গে ধরে রাখার জন্য) */
+        .slider-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ইমেজ স্লাইডার বক্স */
         .slider-box {
             width: 300px;
             height: 300px;
@@ -133,6 +140,7 @@
             flex-shrink: 0;
         }
 
+        /* স্লাইড অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -140,6 +148,42 @@
             60%, 75%  { transform: translateX(-60%); }
             80%, 95%  { transform: translateX(-80%); }
             100%      { transform: translateX(0%); }
+        }
+
+        /* ছবির নিচের অ্যানিমেটেড নাম বা ক্যাপশন স্টাইল */
+        .slider-caption {
+            margin-top: 15px;
+            height: 30px;
+            position: relative;
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .slider-caption span {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e272e;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+            animation: captionAnim 25s infinite;
+            opacity: 0;
+        }
+
+        /* ৫টি ছবির টাইমিং অনুযায়ী টেক্সট অ্যানিমেশন */
+        .slider-caption span:nth-child(1) { animation-delay: 0s; }
+        .slider-caption span:nth-child(2) { animation-delay: 5s; }
+        .slider-caption span:nth-child(3) { animation-delay: 10s; }
+        .slider-caption span:nth-child(4) { animation-delay: 15s; }
+        .slider-caption span:nth-child(5) { animation-delay: 20s; }
+
+        @keyframes captionAnim {
+            0%, 3%   { opacity: 0; transform: translateY(10px); }
+            5%, 15%  { opacity: 1; transform: translateY(0px); }
+            18%, 100% { opacity: 0; transform: translateY(-10px); }
         }
 
         /* মাঝখানের প্রোফাইল কার্ড (ঘূর্ণায়মান নিয়ন বর্ডার সহ) */
@@ -217,7 +261,6 @@
             padding: 12px;
             border-radius: 8px;
             margin-bottom: 15px;
- পার্শ্ববর্তী টেক্সট সজ্জা */
             text-align: left;
             font-size: 13px;
             color: #2d3436;
@@ -257,9 +300,12 @@
         }
 
         @media (max-width: 1100px) {
-            .slider-box, .card {
+            .slider-wrapper, .card {
                 width: 100%;
                 max-width: 350px;
+            }
+            .slider-box, .slider-caption {
+                width: 100%;
             }
         }
     </style>
@@ -311,14 +357,23 @@
     <!-- মূল কন্টেন্ট: বাম স্লাইডার, মাঝখানে প্রোফাইল কার্ড, ডান স্লাইডার -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
-        <div class="slider-box">
-            <div class="slider-track">
-                <img src="image1.png" alt="সার্ভে ছবি ১">
-                <img src="image2.png" alt="সার্ভে ছবি ২">
-                <img src="image3.png" alt="সার্ভে ছবি ৩">
-                <img src="image4.png" alt="সার্ভে ছবি ৪">
-                <img src="image5.png" alt="সার্ভে ছবি ৫">
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার ও অ্যানিমেটেড নাম -->
+        <div class="slider-wrapper">
+            <div class="slider-box">
+                <div class="slider-track">
+                    <img src="image1.png" alt="স্যাটেলাইট বা মাস্টার প্ল্যান">
+                    <img src="image2.png" alt="টোটাল স্টেশন সার্ভে">
+                    <img src="image3.png" alt="জমির সীমানা চিহ্নিতকরণ">
+                    <img src="image4.png" alt="ডিজিটাল ট্যাব ম্যাপ">
+                    <img src="image5.png" alt="অটো লেভেল সার্ভে">
+                </div>
+            </div>
+            <div class="slider-caption">
+                <span>স্যাটেলাইট বা মাস্টার প্ল্যান</span>
+                <span>টোটাল স্টেশন সার্ভে</span>
+                <span>জমির সীমানা চিহ্নিতকরণ</span>
+                <span>ডিজিটাল ট্যাব ম্যাপ</span>
+                <span>অটো লেভেল সার্ভে</span>
             </div>
         </div>
 
@@ -339,14 +394,23 @@
             </a>
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (একই ৫টি ছবি দিয়ে) -->
-        <div class="slider-box">
-            <div class="slider-track">
-                <img src="image1.png" alt="সার্ভে ছবি ১">
-                <img src="image2.png" alt="সার্ভে ছবি ২">
-                <img src="image3.png" alt="সার্ভে ছবি ৩">
-                <img src="image4.png" alt="সার্ভে ছবি ৪">
-                <img src="image5.png" alt="সার্ভে ছবি ৫">
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার ও অ্যানিমেটেড নাম -->
+        <div class="slider-wrapper">
+            <div class="slider-box">
+                <div class="slider-track">
+                    <img src="image1.png" alt="স্যাটেলাইট বা মাস্টার প্ল্যান">
+                    <img src="image2.png" alt="টোটাল স্টেশন সার্ভে">
+                    <img src="image3.png" alt="জমির সীমানা চিহ্নিতকরণ">
+                    <img src="image4.png" alt="ডিজিটাল ট্যাব ম্যাপ">
+                    <img src="image5.png" alt="অটো লেভেল সার্ভে">
+                </div>
+            </div>
+            <div class="slider-caption">
+                <span>স্যাটেলাইট বা মাস্টার প্ল্যান</span>
+                <span>টোটাল স্টেশন সার্ভে</span>
+                <span>জমির সীমানা চিহ্নিতকরণ</span>
+                <span>ডিজিটাল ট্যাব ম্যাপ</span>
+                <span>অটো লেভেল সার্ভে</span>
             </div>
         </div>
 
