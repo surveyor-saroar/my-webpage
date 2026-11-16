@@ -69,13 +69,15 @@
             }
         }
 
-        /* ওপরের রয়েল ব্লু (Royal Blue) মেনু বার */
+        /* ওপরের হেডার মেনু বার (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
         .navbar {
-            background-color: #1d4ed8; 
+            background: rgba(25, 32, 52, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             width: 100%;
             padding: 0 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+            border-bottom: 1px solid rgba(99, 132, 255, 0.25);
             z-index: 10;
         }
 
@@ -103,7 +105,7 @@
         }
 
         .nav-list > li > a:hover {
-            background-color: #1e3a8a; 
+            background: rgba(99, 132, 255, 0.22); 
             color: #ffffff; 
         }
 
@@ -116,18 +118,22 @@
             margin-left: 8px;
         }
 
-        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু */
+        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
         .dropdown-menu {
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #1e40af;
+            background: rgba(25, 32, 52, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             min-width: 230px;
             list-style: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            border-radius: 0 0 6px 6px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            border-radius: 0 0 10px 10px;
+            border: 1px solid rgba(99, 132, 255, 0.28);
+            border-top: none;
+            overflow: hidden;
             z-index: 1000;
         }
 
@@ -137,12 +143,17 @@
             color: #ffffff;
             text-decoration: none;
             font-size: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            transition: background-color 0.2s;
+            border-bottom: 1px solid rgba(99, 132, 255, 0.15);
+            transition: background-color 0.25s, padding-left 0.25s;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
         }
 
         .dropdown-menu li a:hover {
-            background-color: #2563eb;
+            background: rgba(99, 132, 255, 0.28);
+            padding-left: 20px;
             color: #ffffff;
         }
 
@@ -257,7 +268,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের কলাম (অপরিবর্তিত) */
+        /* মাঝখানের গ্লাস বক্স (অপরিবর্তিত) */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -269,11 +280,12 @@
             border-radius: 12px;
             background: rgba(25, 32, 52, 0.55);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
             border: 1px solid rgba(99, 132, 255, 0.25);
         }
 
-        /* ফেসবুক বাটন (বাম পাশে আপনার গোল প্রোফাইল ছবি ও পাশে ফেসবুক সার্কেল লোগো) */
+        /* ফেসবুক বাটন (অপরিবর্তিত) */
         .fb-btn {
             display: inline-flex;
             align-items: center;
@@ -297,7 +309,6 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
-        /* বাটনের ভেতরের আপনার গোল প্রোফাইল লোগো */
         .btn-profile-circle {
             width: 26px;
             height: 26px;
@@ -308,7 +319,6 @@
             flex-shrink: 0;
         }
 
-        /* বাটনের ভেতরের ফেসবুক সার্কেল লোগো */
         .fb-btn i {
             background-color: #ffffff;
             color: #1877f2;
@@ -358,13 +368,16 @@
             display: block;
         }
 
-        /* নিচের রয়েল ব্লু ফুটার বার */
+        /* নিচের ফুটার বার (গ্লাস বক্সের মতো ডার্ক গ্লাস ডিজাইন) */
         .footer-bar {
-            background-color: #1d4ed8; 
+            background: rgba(25, 32, 52, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             width: 100%;
             padding: 12px 20px;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.55);
+            border-top: 1px solid rgba(99, 132, 255, 0.25);
+            border-bottom: 1px solid rgba(99, 132, 255, 0.25);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -426,7 +439,7 @@
 </head>
 <body>
 
-    <!-- ওপরের রয়েল ব্লু মেনু বার -->
+    <!-- ওপরের গ্লাস হেডার মেনু বার -->
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="#" class="home-icon"><i class="fa-solid fa-house"></i></a></li>
@@ -491,7 +504,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (ফেসবুক লোগোর বাম পাশে আপনার গোল প্রোফাইল লোগোসহ বাটন ও ম্যাপ বক্স) -->
+        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স (সম্পূর্ণ অপরিবর্তিত) -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -535,7 +548,7 @@
 
     </div>
 
-    <!-- নিচের রয়েল ব্লু ফুটার বার (নিচের সার্কেল লোগো অপরিবর্তিত) -->
+    <!-- নিচের গ্লাস ফুটার বার -->
     <footer class="footer-bar">
         <div class="footer-item">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
