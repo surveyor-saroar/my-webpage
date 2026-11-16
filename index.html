@@ -129,13 +129,13 @@
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার - ওপর থেকে ১ ইঞ্চি (প্রায় 1in / 96px) ফাঁকা জায়গা রাখা হয়েছে */
+        /* মূল কন্টেন্ট কন্টেইনার (স্লাইডার ও কার্ডের মধ্যকার দূরত্ব ০.৫ ইঞ্চি বাড়ানোর জন্য gap বাড়ানো হয়েছে) */
         .main-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 35px;
+            gap: 78px; /* প্রোফাইল থেকে স্লাইডার ডানে ও বামে আরও ০.৫ ইঞ্চি (প্রায় 48px) ফাঁকা করার জন্য */
             padding: 1in 20px 40px 20px; 
             flex-wrap: wrap;
             z-index: 2;
@@ -239,7 +239,6 @@
         .middle-column {
             display: flex;
             flex-direction: column;
-            gap: 18px;
             align-items: center;
             width: 300px;
         }
@@ -364,7 +363,7 @@
             margin-right: 8px;
         }
 
-        /* অফিস লোকেশন ম্যাপ বক্স */
+        /* অফিস লোকেশন ম্যাপ বক্স (প্রোফাইল কার্ড থেকে ঠিক ০.৫ ইঞ্চি অর্থাৎ প্রায় 48px নিচে নামানো হয়েছে) */
         .map-container-box {
             width: 300px;
             background-color: #ffffff;
@@ -372,6 +371,7 @@
             overflow: hidden;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
             border: 2px solid #009432;
+            margin-top: 0.5in; /* ঠিক ০.৫ ইঞ্চি নিচে ফাঁকা বা দূরত্ব */
         }
 
         .map-header {
@@ -403,6 +403,7 @@
             .main-container {
                 align-items: center;
                 padding-top: 40px;
+                gap: 30px;
             }
             .slider-wrapper, .middle-column, .card, .map-container-box, .slider-box, .slider-caption {
                 width: 100%;
@@ -478,7 +479,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড ও ম্যাপ) -->
+        <!-- ২. মাঝখানের কলাম (প্রোফাইল কার্ড ও নিচে ০.৫ ইঞ্চি দূরে ম্যাপ) -->
         <div class="middle-column">
             
             <!-- প্রোফাইল কার্ড -->
@@ -498,7 +499,7 @@
                 </a>
             </div>
 
-            <!-- অফিস লোকেশন ম্যাপ বক্স -->
+            <!-- অফিস লোকেশন ম্যাপ বক্স (প্রোফাইল কার্ড থেকে ০.৫ ইঞ্চি নিচে) -->
             <div class="map-container-box">
                 <div class="map-header">
                     <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ
@@ -518,7 +519,7 @@
                     <img src="image2.png" alt="টোটাল স্টেশন সার্ভে">
                     <img src="image3.png" alt="জমির সীমানা চিহ্নিতকরণ">
                     <img src="image4.png" alt="ডিজিটাল ট্যাব ম্যাপ">
-                    <img src="image5.png" alt="អটো লেভেল সার্ভে">
+                    <img src="image5.png" alt="অটো লেভেল সার্ভে">
                 </div>
             </div>
             <div class="slider-caption right-caption">
