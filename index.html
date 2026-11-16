@@ -110,14 +110,14 @@
             flex-wrap: wrap;
         }
 
-        /* বাম পাশের ইমেজ স্লাইডার বক্স (শক্তিশালী ড্রপ শেডো সহ) */
+        /* বাম পাশের ইমেজ স্লাইডার বক্স (আরও গভীর ও গাঢ় ড্রপ শ্যাডো সহ) */
         .slider-box {
             width: 320px;
             height: 320px;
             overflow: hidden;
             border-radius: 12px;
-            /* এখানে ড্রপ শেডো বা বক্স শ্যাডো দেওয়া হয়েছে */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
+            /* স্লাইডারের নিচে বাড়তি এবং গাঢ় ড্রপ শ্যাডো */
+            box-shadow: 0 28px 50px -10px rgba(0, 0, 0, 0.55), 0 12px 24px rgba(0, 0, 0, 0.3);
             background-color: #ffffff;
         }
 
@@ -145,12 +145,11 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ডান পাশের প্রোফাইল কার্ড (শক্তিশালী ড্রপ শেডো সহ) */
+        /* ডান পাশের প্রোফাইল কার্ড */
         .card {
             background-color: #ffffff;
             padding: 35px 30px;
             border-radius: 15px;
-            /* এখানেও আকর্ষণীয় ড্রপ শেডো দেওয়া হয়েছে */
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
             text-align: center;
             width: 380px;
@@ -309,7 +308,7 @@
 
             <!-- যোগাযোগের ঠিকানা ও মোবাইল নম্বর বক্স -->
             <div class="contact-box">
-                <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;">*</i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
+                <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;"></i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
                 <p><i class="fa-solid fa-phone" style="color: #009432; width: 20px;"></i> <strong>মোবাইল:</strong> <a href="tel:01817068114" style="color: #0984e3; text-decoration: none;">01817068114</a></p>
             </div>
 
