@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Webpage</title>
-    <!-- Font Awesome আইকন ব্যবহারের লিংক -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -110,13 +109,12 @@
             flex-wrap: wrap;
         }
 
-        /* বাম পাশের ইমেজ স্লাইডার বক্স (আরও গভীর ও গাঢ় ড্রপ শ্যাডো সহ) */
+        /* বাম পাশের ইমেজ স্লাইডার বক্স */
         .slider-box {
             width: 320px;
             height: 320px;
             overflow: hidden;
             border-radius: 12px;
-            /* স্লাইডারের নিচে বাড়তি এবং গাঢ় ড্রপ শ্যাডো */
             box-shadow: 0 28px 50px -10px rgba(0, 0, 0, 0.55), 0 12px 24px rgba(0, 0, 0, 0.3);
             background-color: #ffffff;
         }
@@ -135,7 +133,6 @@
             flex-shrink: 0;
         }
 
-        /* স্লাইড অ্যানিমেশন */
         @keyframes slideShow {
             0%, 15%   { transform: translateX(0%); }
             20%, 35%  { transform: translateX(-20%); }
@@ -145,15 +142,53 @@
             100%      { transform: translateX(0%); }
         }
 
-        /* ডান পাশের প্রোফাইল কার্ড */
+        /* ডান পাশের প্রোফাইল কার্ড (চারপাশে ঘূর্ণায়মান নিয়ন লাইট বর্ডার সহ) */
         .card {
+            position: relative;
             background-color: #ffffff;
             padding: 35px 30px;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
             width: 380px;
             max-width: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* ঘূর্ণায়মান নিয়ন আলোর লেয়ার */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                transparent, 
+                transparent, 
+                #00ff88, 
+                #00d2ff, 
+                #ff007f
+            );
+            animation: rotateNeon 3.5s linear infinite;
+            z-index: -2;
+        }
+
+        /* কার্ডের ভেতরের সাদা ব্যাকগ্রাউন্ড (যাতে শুধু বর্ডারেই নিয়ন আলো দেখা যায়) */
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 4px; /* নিয়ন বর্ডারের পুরুত্ব */
+            background-color: #ffffff;
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        @keyframes rotateNeon {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .profile-img {
@@ -234,13 +269,11 @@
 </head>
 <body>
 
-    <!-- ওপরের সবুজ মেনু বার (Navigation Bar) -->
+    <!-- ওপরের সবুজ মেনু বার -->
     <nav class="navbar">
         <ul class="nav-list">
-            <!-- হোম আইকন -->
             <li><a href="#" class="home-icon"><i class="fa-solid fa-house"></i></a></li>
             
-            <!-- মেনু বাটন ১: ভূমি-তথ্য ও সেবা -->
             <li class="dropdown">
                 <a href="#">ভূমি-তথ্য ও সেবা <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
@@ -249,7 +282,6 @@
                 </ul>
             </li>
 
-            <!-- মেনু বাটন ২: যোগাযোগ -->
             <li class="dropdown">
                 <a href="#">যোগাযোগ <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
@@ -258,7 +290,6 @@
                 </ul>
             </li>
 
-            <!-- মেনু বাটন ৩: জরিপ সংক্রান্ত তথ্য -->
             <li class="dropdown">
                 <a href="#">জরিপ সংক্রান্ত তথ্য <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
@@ -268,7 +299,6 @@
                 </ul>
             </li>
 
-            <!-- মেনু বাটন ৪: নকশা -->
             <li class="dropdown">
                 <a href="#">নকশা <i class="fa-solid fa-chevron-down arrow"></i></a>
                 <ul class="dropdown-menu">
@@ -297,22 +327,15 @@
 
         <!-- ডান পাশের প্রোফাইল কার্ড -->
         <div class="card">
-            <!-- আপনার ছবি -->
             <img src="my-pic.png" alt="আমার ছবি" class="profile-img">
-
-            <!-- স্বাগতম লেখা -->
             <h1>স্বাগতম</h1>
-            
-            <!-- পেশার বিবরণ -->
             <p class="profession">ডিজিটাল মিডিয়া ক্রিয়েটর ও ল্যান্ড সার্ভেয়ার</p>
 
-            <!-- যোগাযোগের ঠিকানা ও মোবাইল নম্বর বক্স -->
             <div class="contact-box">
                 <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: #009432; width: 20px;"></i> <strong>ঠিকানা:</strong> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</p>
                 <p><i class="fa-solid fa-phone" style="color: #009432; width: 20px;"></i> <strong>মোবাইল:</strong> <a href="tel:01817068114" style="color: #0984e3; text-decoration: none;">01817068114</a></p>
             </div>
 
-            <!-- ফেসবুক পেজ বাটন -->
             <a href="https://facebook.com" target="_blank" class="fb-btn">
                 <i class="fa-brands fa-facebook"></i> 
                 ফেসবুক পেজ
