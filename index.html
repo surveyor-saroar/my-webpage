@@ -173,7 +173,7 @@
             display: block;
         }
 
-        /* মূল কন্টেন্ট কন্টেইনার (অপরিবর্তিত) */
+        /* মূল কন্টেন্ট কন্টেইনার */
         .main-container {
             flex: 1;
             display: flex;
@@ -185,22 +185,23 @@
             z-index: 2;
         }
 
-        /* স্লাইডার র‍্যাপার (অপরিবর্তিত) */
+        /* স্লাইডার র‍্যাপার (ম্যাপ বক্সের সমান প্রস্থ 270px ও ম্যাপের সাথে সমান্তরাল লাইনে) */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 300px;
+            width: 270px;
+            margin-top: 73px; /* মাঝের ম্যাপ বক্সের সাথে একদম সমান লাইনে রাখার জন্য */
         }
 
-        /* ইমেজ স্লাইডার বক্স (অপরিবর্তিত) */
+        /* ইমেজ স্লাইডার বক্স (হুবহু ম্যাপ বক্সের সাইজ: 270px × 212px) */
         .slider-box {
-            width: 300px;
-            height: 300px;
+            width: 270px;
+            height: 212px;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             background-color: #131620;
         }
 
@@ -244,7 +245,7 @@
             margin-top: 12px;
             height: 28px;
             position: relative;
-            width: 300px;
+            width: 270px;
             text-align: center;
             overflow: hidden;
         }
@@ -254,7 +255,7 @@
             width: 100%;
             left: 0;
             top: 0;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             color: #ffffff;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
@@ -345,7 +346,7 @@
             flex-shrink: 0;
         }
 
-        /* মাঝের ম্যাপ বক্স (অপরিবর্তিত) */
+        /* মাঝের ম্যাপ বক্স (অপরিবর্তিত: 270px × 212px) */
         .map-container-box {
             width: 100%;
             background-color: #ffffff;
@@ -437,9 +438,12 @@
                 padding-top: 40px;
                 gap: 30px;
             }
+            .slider-wrapper {
+                margin-top: 0;
+            }
             .slider-wrapper, .middle-column, .slider-box, .slider-caption {
                 width: 100%;
-                max-width: 320px;
+                max-width: 300px;
             }
             .footer-bar {
                 flex-direction: column;
@@ -501,7 +505,7 @@
     <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার (ম্যাপ বক্সের সমান 270px × 212px স্কেলে) -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -521,7 +525,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স -->
+        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স (অপরিবর্তিত) -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -543,7 +547,7 @@
 
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (ম্যাপ বক্সের সমান 270px × 212px স্কেলে) -->
         <div class="slider-wrapper">
             <div class="slider-box right-slider">
                 <div class="slider-track">
