@@ -116,7 +116,7 @@
             margin-left: 8px;
         }
 
-        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু (রয়েল ব্লু ও সাদা ফন্ট) */
+        /* ওপরের নেভিগেশনের নিচের ড্রপডাউন সাব-মেনু */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -273,12 +273,13 @@
             border: 1px solid rgba(99, 132, 255, 0.25);
         }
 
+        /* ফেসবুক বাটন (বাম পাশে আপনার গোল প্রোফাইল ছবি ও পাশে ফেসবুক সার্কেল লোগো) */
         .fb-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 210px;
-            padding: 10px 18px;
+            width: 235px;
+            padding: 9px 16px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -296,17 +297,30 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
+        /* বাটনের ভেতরের আপনার গোল প্রোফাইল লোগো */
+        .btn-profile-circle {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid #ffffff;
+            margin-right: 7px;
+            flex-shrink: 0;
+        }
+
+        /* বাটনের ভেতরের ফেসবুক সার্কেল লোগো */
         .fb-btn i {
             background-color: #ffffff;
             color: #1877f2;
             font-size: 18px;
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            margin-right: 9px;
+            flex-shrink: 0;
         }
 
         /* মাঝের ম্যাপ বক্স (অপরিবর্তিত) */
@@ -344,7 +358,7 @@
             display: block;
         }
 
-        /* নিচের রয়েল ব্লু ফুটার বার (কোনো সাদা ব্লক ছাড়াই সাদা ফন্টে) */
+        /* নিচের রয়েল ব্লু ফুটার বার */
         .footer-bar {
             background-color: #1d4ed8; 
             width: 100%;
@@ -477,11 +491,12 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের কলাম ও ম্যাপ বক্স (সম্পূর্ণ অপরিবর্তিত) -->
+        <!-- ২. মাঝখানের কলাম (ফেসবুক লোগোর বাম পাশে আপনার গোল প্রোফাইল লোগোসহ বাটন ও ম্যাপ বক্স) -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
             <a href="https://facebook.com" target="_blank" class="fb-btn">
+                <img src="my-pic.png" alt="প্রোফাইল লোগো" class="btn-profile-circle">
                 <i class="fa-brands fa-facebook"></i> 
                 ফেসবুক পেজ
             </a>
@@ -520,7 +535,7 @@
 
     </div>
 
-    <!-- নিচের রয়েল ব্লু ফুটার বার (কোনো সাদা ব্লক ছাড়াই সাদা ফন্টে) -->
+    <!-- নিচের রয়েল ব্লু ফুটার বার (নিচের সার্কেল লোগো অপরিবর্তিত) -->
     <footer class="footer-bar">
         <div class="footer-item">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
