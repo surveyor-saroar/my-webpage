@@ -185,16 +185,16 @@
             z-index: 2;
         }
 
-        /* স্লাইডার র‍্যাপার (ম্যাপ বক্সের সমান প্রস্থ 270px ও ম্যাপের সাথে সমান্তরাল লাইনে) */
+        /* স্লাইডার র‍্যাপার */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 270px;
-            margin-top: 73px; /* মাঝের ম্যাপ বক্সের সাথে একদম সমান লাইনে রাখার জন্য */
+            margin-top: 73px;
         }
 
-        /* ইমেজ স্লাইডার বক্স (হুবহু ম্যাপ বক্সের সাইজ: 270px × 212px) */
+        /* ইমেজ স্লাইডার বক্স */
         .slider-box {
             width: 270px;
             height: 212px;
@@ -281,7 +281,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের গ্লাস বক্স (অপরিবর্তিত) */
+        /* মাঝখানের গ্লাস বক্স */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -298,7 +298,7 @@
             border: 1px solid rgba(99, 132, 255, 0.25);
         }
 
-        /* ফেসবুক বাটন (অপরিবর্তিত) */
+        /* ফেসবুক বাটন */
         .fb-btn {
             display: inline-flex;
             align-items: center;
@@ -346,14 +346,47 @@
             flex-shrink: 0;
         }
 
-        /* মাঝের ম্যাপ বক্স (অপরিবর্তিত: 270px × 212px) */
+        /* মাঝের ম্যাপ বক্স - চারপাশে চিকন অ্যানিমেটেড নিয়ন শাইন (Thin Neon Shine) বর্ডার */
         .map-container-box {
+            position: relative;
+            width: 100%;
+            border-radius: 9px;
+            padding: 2px; /* চিকন ২ পিক্সেল নিয়ন বর্ডারের পুরুত্ব */
+            overflow: hidden;
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.45), 0 0 6px rgba(0, 255, 136, 0.35);
+            z-index: 1;
+        }
+
+        /* ঘূর্ণায়মান চিকন নিয়ন আলোর লেয়ার */
+        .map-container-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent 0deg,
+                transparent 220deg,
+                #00ff88 275deg,
+                #38bdf8 320deg,
+                #ffffff 345deg,
+                transparent 360deg
+            );
+            animation: mapNeonShine 3.2s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes mapNeonShine {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .map-inner-content {
             width: 100%;
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 7px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-            border: 2px solid #009432;
         }
 
         .map-header {
@@ -381,7 +414,7 @@
             display: block;
         }
 
-        /* নিচের গ্লাস ফুটার বার (অপরিবর্তিত) */
+        /* নিচের গ্লাস ফুটার বার */
         .footer-bar {
             background: rgba(25, 32, 52, 0.55);
             backdrop-filter: blur(12px);
@@ -505,7 +538,7 @@
     <!-- মূল কন্টেন্ট -->
     <div class="main-container">
         
-        <!-- ১. বাম পাশের ইমেজ স্লাইডার (ম্যাপ বক্সের সমান 270px × 212px স্কেলে) -->
+        <!-- ১. বাম পাশের ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box">
                 <div class="slider-track">
@@ -525,7 +558,7 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের গ্লাস বক্স ও ম্যাপ বক্স (অপরিবর্তিত) -->
+        <!-- ২. মাঝখানের গ্লাস বক্স ও চিকন নিয়ন শাইনসহ ম্যাপ বক্স -->
         <div class="middle-column">
             
             <!-- ফেসবুক পেজ বাটন -->
@@ -535,19 +568,21 @@
                 ফেসবুক পেজ
             </a>
 
-            <!-- অফিস লোকেশন ম্যাপ বক্স -->
+            <!-- চিকন নিয়ন শাইন বর্ডারযুক্ত অফিস লোকেশন ম্যাপ বক্স -->
             <div class="map-container-box">
-                <div class="map-header">
-                    <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ
-                </div>
-                <div class="map-iframe-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5447781351187!2d90.9619575!3d23.4025711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375461ba729392a3%3A0xf0ed69f2b1592cbf!2sKaduti%20Bazar!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-inner-content">
+                    <div class="map-header">
+                        <i class="fa-solid fa-map-location-dot"></i> অফিস লোকেশন ম্যাপ
+                    </div>
+                    <div class="map-iframe-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.5447781351187!2d90.9619575!3d23.4025711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375461ba729392a3%3A0xf0ed69f2b1592cbf!2sKaduti%20Bazar!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার (ম্যাপ বক্সের সমান 270px × 212px স্কেলে) -->
+        <!-- ৩. ডান পাশের দ্বিতীয় ইমেজ স্লাইডার -->
         <div class="slider-wrapper">
             <div class="slider-box right-slider">
                 <div class="slider-track">
