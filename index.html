@@ -180,18 +180,18 @@
             justify-content: center;
             align-items: flex-start;
             gap: 65px;
-            padding: 0.85in 20px 40px 20px; 
+            padding: 0.75in 20px 40px 20px; 
             flex-wrap: wrap;
             z-index: 2;
         }
 
-        /* স্লাইডার র‍্যাপার */
+        /* স্লাইডার র‍্যাপার (ম্যাপ বক্সের সমান্তরাল লাইনে অ্যালাইন করা) */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 270px;
-            margin-top: 73px;
+            margin-top: 128px;
         }
 
         /* ইমেজ স্লাইডার বক্স */
@@ -281,14 +281,14 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের গ্লাস বক্স */
+        /* মাঝখানের গ্লাস বক্স (ফেসবুক বাটন, হোয়াটসঅ্যাপ বাটন ও ম্যাপ বক্স) */
         .middle-column {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             width: 300px;
-            height: 300px;
+            height: 356px;
             padding: 15px;
             border-radius: 12px;
             background: rgba(25, 32, 52, 0.55);
@@ -298,8 +298,17 @@
             border: 1px solid rgba(99, 132, 255, 0.25);
         }
 
-        /* ফেসবুক বাটন */
-        .fb-btn {
+        /* বাটন গ্রুপ */
+        .social-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* ফেসবুক ও হোয়াটসঅ্যাপ বাটন (একই স্কেল ও স্টাইল) */
+        .social-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -320,6 +329,12 @@
             background-color: #0f172a;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .wa-btn:hover {
+            background-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
         .btn-profile-circle {
@@ -346,18 +361,31 @@
             flex-shrink: 0;
         }
 
-        /* মাঝের ম্যাপ বক্স - চারপাশে চিকন অ্যানিমেটেড নিয়ন শাইন (Thin Neon Shine) বর্ডার */
+        .wa-btn i {
+            background-color: #25D366;
+            color: #ffffff;
+            font-size: 17px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 9px;
+            flex-shrink: 0;
+        }
+
+        /* মাঝের ম্যাপ বক্স - চারপাশে চিকন অ্যানিমেটেড নিয়ন শাইন বর্ডার */
         .map-container-box {
             position: relative;
             width: 100%;
             border-radius: 9px;
-            padding: 2px; /* চিকন ২ পিক্সেল নিয়ন বর্ডারের পুরুত্ব */
+            padding: 2px;
             overflow: hidden;
             box-shadow: 0 0 14px rgba(56, 189, 248, 0.45), 0 0 6px rgba(0, 255, 136, 0.35);
             z-index: 1;
         }
 
-        /* ঘূর্ণায়মান চিকন নিয়ন আলোর লেয়ার */
         .map-container-box::before {
             content: '';
             position: absolute;
@@ -558,15 +586,24 @@
             </div>
         </div>
 
-        <!-- ২. মাঝখানের গ্লাস বক্স ও চিকন নিয়ন শাইনসহ ম্যাপ বক্স -->
+        <!-- ২. মাঝখানের গ্লাস বক্স (ফেসবুক ও হোয়াটসঅ্যাপ বাটন + নিয়ন শাইন ম্যাপ বক্স) -->
         <div class="middle-column">
             
-            <!-- ফেসবুক পেজ বাটন -->
-            <a href="https://facebook.com" target="_blank" class="fb-btn">
-                <img src="my-pic.png" alt="প্রোফাইল লোগো" class="btn-profile-circle">
-                <i class="fa-brands fa-facebook"></i> 
-                ফেসবুক পেজ
-            </a>
+            <div class="social-btn-group">
+                <!-- ফেসবুক পেজ বাটন -->
+                <a href="https://facebook.com" target="_blank" class="social-btn fb-btn">
+                    <img src="my-pic.png" alt="প্রোফাইল লোগো" class="btn-profile-circle">
+                    <i class="fa-brands fa-facebook"></i> 
+                    ফেসবুক পেজ
+                </a>
+
+                <!-- হোয়াটসঅ্যাপ লিংক বাটন -->
+                <a href="https://wa.me/8801817068114" target="_blank" class="social-btn wa-btn">
+                    <img src="my-pic.png" alt="প্রোফাইল লোগো" class="btn-profile-circle">
+                    <i class="fa-brands fa-whatsapp"></i> 
+                    হোয়াটসঅ্যাপ
+                </a>
+            </div>
 
             <!-- চিকন নিয়ন শাইন বর্ডারযুক্ত অফিস লোকেশন ম্যাপ বক্স -->
             <div class="map-container-box">
