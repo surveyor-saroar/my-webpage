@@ -185,7 +185,7 @@
             z-index: 2;
         }
 
-        /* স্লাইডার র‍্যাপার (ম্যাপ বক্সের সমান্তরাল লাইনে অ্যালাইন করা) */
+        /* স্লাইডার র‍্যাপার */
         .slider-wrapper {
             display: flex;
             flex-direction: column;
@@ -281,7 +281,7 @@
             18%, 100% { opacity: 0; transform: translateY(-6px); }
         }
 
-        /* মাঝখানের গ্লাস বক্স (ফেসবুক বাটন, হোয়াটসঅ্যাপ বাটন ও ম্যাপ বক্স) */
+        /* মাঝখানের গ্লাস বক্স */
         .middle-column {
             display: flex;
             flex-direction: column;
@@ -307,7 +307,7 @@
             width: 100%;
         }
 
-        /* ফেসবুক ও হোয়াটসঅ্যাপ বাটন (একই স্কেল ও স্টাইল) */
+        /* ফেসবুক ও হোয়াটসঅ্যাপ বাটন */
         .social-btn {
             display: inline-flex;
             align-items: center;
@@ -455,7 +455,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 24px;
+            gap: 22px;
             flex-wrap: wrap;
             z-index: 10;
             margin-bottom: 18px;
@@ -470,6 +470,11 @@
             align-items: center;
             gap: 7px;
             text-decoration: none;
+            transition: color 0.25s;
+        }
+
+        a.footer-item:hover {
+            color: #38bdf8;
         }
 
         .footer-item i {
@@ -641,7 +646,7 @@
 
     </div>
 
-    <!-- নিচের গ্লাস ফুটার বার -->
+    <!-- নিচের গ্লাস ফুটার বার (মোবাইল নম্বরের ডানপাশে ইমেইল লিংকসহ) -->
     <footer class="footer-bar">
         <div class="footer-item">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
@@ -649,6 +654,10 @@
         
         <a href="tel:01817068114" class="footer-item">
             <i class="fa-solid fa-phone"></i> মোবাইল: 01817068114
+        </a>
+
+        <a href="mailto:shaboja@gmail.com" class="footer-item">
+            <i class="fa-solid fa-envelope"></i> ইমেইল: shaboja@gmail.com
         </a>
 
         <img src="my-pic.png" alt="প্রোফাইল ছবি" class="footer-profile-pic">
