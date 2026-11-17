@@ -139,7 +139,7 @@
             background: rgba(25, 32, 52, 0.88);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            min-width: 230px;
+            min-width: 245px;
             list-style: none;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
             border-radius: 0 0 10px 10px;
@@ -156,7 +156,7 @@
             text-decoration: none;
             font-size: 14px;
             border-bottom: 1px solid rgba(99, 132, 255, 0.15);
-            transition: background-color 0.25s, padding-left 0.25s;
+            transition: background-color 0.25s, padding-left 0.25s, color 0.25s;
         }
 
         .dropdown-menu li:last-child a {
@@ -166,7 +166,18 @@
         .dropdown-menu li a:hover {
             background: rgba(99, 132, 255, 0.28);
             padding-left: 20px;
-            color: #ffffff;
+        }
+
+        /* ওপরের ও নিচের ইমেইল লিংকের বিশেষ ব্লু কালার */
+        .email-blue-link,
+        .email-blue-link i {
+            color: #38bdf8 !important;
+            font-weight: bold;
+        }
+
+        .email-blue-link:hover,
+        .email-blue-link:hover i {
+            color: #7dd3fc !important;
         }
 
         .dropdown:hover .dropdown-menu {
@@ -473,10 +484,6 @@
             transition: color 0.25s;
         }
 
-        a.footer-item:hover {
-            color: #38bdf8;
-        }
-
         .footer-item i {
             color: #ffffff;
             font-size: 15px;
@@ -544,6 +551,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="https://maps.google.com/?q=Kaduti+Bazar,Chandina,Comilla" target="_blank"><i class="fa-solid fa-location-dot" style="margin-right: 8px; color: #ffffff;"></i> কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা</a></li>
                     <li><a href="tel:01817068114"><i class="fa-solid fa-phone" style="margin-right: 8px; color: #ffffff;"></i> 01817068114</a></li>
+                    <li><a href="mailto:shaboja@gmail.com" class="email-blue-link"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> shaboja@gmail.com</a></li>
                 </ul>
             </li>
 
@@ -646,7 +654,7 @@
 
     </div>
 
-    <!-- নিচের গ্লাস ফুটার বার (মোবাইল নম্বরের ডানপাশে ইমেইল লিংকসহ) -->
+    <!-- নিচের গ্লাস ফুটার বার (ব্লু কালারের ইমেইল লিংকসহ) -->
     <footer class="footer-bar">
         <div class="footer-item">
             <i class="fa-solid fa-location-dot"></i> ঠিকানা: কাদুটি মধ্য বাজার, চান্দিনা, কুমিল্লা
@@ -656,7 +664,7 @@
             <i class="fa-solid fa-phone"></i> মোবাইল: 01817068114
         </a>
 
-        <a href="mailto:shaboja@gmail.com" class="footer-item">
+        <a href="mailto:shaboja@gmail.com" class="footer-item email-blue-link">
             <i class="fa-solid fa-envelope"></i> ইমেইল: shaboja@gmail.com
         </a>
 
